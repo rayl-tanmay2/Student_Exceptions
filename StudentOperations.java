@@ -65,3 +65,15 @@ public void updateStudent(long prn, String name, String branch, String batch, do
     student.setCGPA(cgpa);
     System.out.println("Student details updated.");
 }
+
+ // Delete Student by PRN with custom exception
+public boolean deleteStudent(long prn) throws StudentNotFoundException {
+    Student student = searchByPRN(prn);
+    if (student != null) {
+        students.remove(student);
+        System.out.println("Student removed successfully.");
+        return true;
+    }
+    throw new StudentNotFoundException("Cannot delete: Student with PRN " + prn + " not found.");
+}
+
