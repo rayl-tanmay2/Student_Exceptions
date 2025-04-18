@@ -14,3 +14,7 @@ class Student {
   this.batch = batch;
   this.cgpa = cgpa;
  }
+// Getter-Setter Methods for private members
+ public String getName() {
+  return name;
+ }
