@@ -24,3 +24,12 @@ public void addStudents(Student student) throws DuplicatePRNException, InvalidCG
    student.display();
   }
  }
+//  searchByPRN to throw exception
+public Student searchByPRN(long prn) throws StudentNotFoundException {
+    for (Student student : students) {
+        if (student.getPRN() == prn) {
+            return student;
+        }
+    }
+    throw new StudentNotFoundException("Student with PRN " + prn + " not found.");
+}
