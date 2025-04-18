@@ -17,3 +17,10 @@ public void addStudents(Student student) throws DuplicatePRNException, InvalidCG
     students.add(student);
     System.out.println("Student added successfully.");
 }
+
+// Method to Display Student Details
+ public void displayStudents() {
+  for (Student student : students) {
+   student.display();
+  }
+ }
