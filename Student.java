@@ -28,4 +28,30 @@ public void setName(String name) {
 
  public void setPRN(long prn) {
   this.prn = prn;
+
+ }
+
+  public String getBranch() {
+  return branch;
+ }
+
+ public void setBranch(String branch) {
+  this.branch = branch;
+ }
+
+ public String getBatch() {
+  return batch;
+ }
+
+ public void setBatch(String batch) {
+  this.batch = batch;
+ }
+
+ public double getCGPA() {
+  return cgpa;
+ }
+
+ public void setCGPA(double cgpa) {
+  this.cgpa = cgpa;
+ }
  }
