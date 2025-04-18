@@ -52,4 +52,16 @@ public Student searchByPosition(int position) throws InvalidPositionException {
     }
     return students.get(position);
 }
-
+// updateStudent
+public void updateStudent(long prn, String name, String branch, String batch, double cgpa)
+        throws StudentNotFoundException, InvalidCGPAException {
+    Student student = searchByPRN(prn);
+    if (cgpa < 0.0 || cgpa > 10.0) {
+        throw new InvalidCGPAException("CGPA must be between 0.0 and 10.0.");
+    }
+    student.setName(name);
+    student.setBranch(branch);
+    student.setBatch(batch);
+    student.setCGPA(cgpa);
+    System.out.println("Student details updated.");
+}
