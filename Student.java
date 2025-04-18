@@ -21,3 +21,11 @@ class Student {
 public void setName(String name) {
   this.name = name;
  }
+
+ public long getPRN() {
+  return prn;
+ }
+
+ public void setPRN(long prn) {
+  this.prn = prn;
+ }
