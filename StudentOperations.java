@@ -44,3 +44,12 @@ public Student searchByPRN(long prn) throws StudentNotFoundException {
   }
   return null;
  }
+
+ // Modified searchByPosition
+public Student searchByPosition(int position) throws InvalidPositionException {
+    if (position < 0 || position >= students.size()) {
+        throw new InvalidPositionException("Position out of range.");
+    }
+    return students.get(position);
+}
+
