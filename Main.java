@@ -111,10 +111,14 @@ class Main {
 
 
     case 7: // // Delete Student
-     System.out.print("Enter PRN to delete: ");
-     prn = Long.parseLong(scan.nextLine());
-     operations.deleteStudent(prn);
-     break;
+    try {
+        System.out.print("Enter PRN to delete: ");
+        long prn = Long.parseLong(scan.nextLine());
+        operations.deleteStudent(prn);
+    } catch (StudentNotFoundException e) {
+        System.out.println("Error: " + e.getMessage());
+    }
+    break;
 
 
 
