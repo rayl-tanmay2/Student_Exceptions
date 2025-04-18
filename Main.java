@@ -81,11 +81,13 @@ class Main {
      break;
 
     case 5: // Search Student by Position
-     System.out.print("Enter position (index starts from 0): ");
-     int position = Integer.parseInt(scan.nextLine());
-     Student foundByPosition = operations.searchByPosition(position);
-     if (foundByPosition != null) {
-      foundByPosition.display();
+     try {
+         System.out.print("Enter position (index starts from 0): ");
+         int position = Integer.parseInt(scan.nextLine());
+         Student found = operations.searchByPosition(position);
+         found.display();
+     } catch (InvalidPositionException e) {
+         System.out.println("Error: " + e.getMessage());
      }
      break;
      case 6: // Update Student
