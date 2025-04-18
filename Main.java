@@ -91,19 +91,24 @@ class Main {
      }
      break;
      case 6: // Update Student
-     System.out.print("Enter PRN to update: ");
-     prn = Long.parseLong(scan.nextLine());
-     System.out.print("Enter New Name: ");
-     name = scan.nextLine();
-     System.out.print("Enter New Branch: ");
-     branch = scan.nextLine();
-     System.out.print("Enter New Batch: ");
-     batch = scan.nextLine();
-     System.out.print("Enter New CGPA: ");
-     cgpa = Double.parseDouble(scan.nextLine());
+      try {
+        System.out.print("Enter PRN to update: ");
+        long prn = Long.parseLong(scan.nextLine());
+        System.out.print("Enter New Name: ");
+        String name = scan.nextLine();
+        System.out.print("Enter New Branch: ");
+        String branch = scan.nextLine();
+        System.out.print("Enter New Batch: ");
+        String batch = scan.nextLine();
+        System.out.print("Enter New CGPA: ");
+        double cgpa = Double.parseDouble(scan.nextLine());
 
-     operations.updateStudent(prn, name, branch, batch, cgpa);
-     break;
+        operations.updateStudent(prn, name, branch, batch, cgpa);
+    } catch (StudentNotFoundException | InvalidCGPAException e) {
+        System.out.println("Error: " + e.getMessage());
+    }
+    break;
+
 
     case 7: // // Delete Student
      System.out.print("Enter PRN to delete: ");
