@@ -1,4 +1,4 @@
-# StudentDataEntryExceptions
+# Student_Exceptions
 
 A Java console application designed to manage student data with robust exception handling using custom exceptions. This project is structured using packages and modular Java classes to maintain clarity and adherence to coding guidelines.
 
